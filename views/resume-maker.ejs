@@ -1,0 +1,74 @@
+<!-- resume maker <%- theme%> -->
+
+<div class="container">
+    <p class="text-primary">
+        you are using <%=theme%>theme
+    </p>
+    <form action="/resume-maker " class="text-primary form" method="POST">
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault01">Full name</label>
+                <input type="text" name="name" class="form-control">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault01">Email</label>
+                <input type="text" name="email" class="form-control">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault01">Phone Number</label>
+                    <input type="text" name="phone" class="form-control">
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault01">Father's name</label>
+                <input type="text" name="f_name" class="form-control">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault01">Mother's name</label>
+                <input type="text" name="m_name" class="form-control">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault01">Date of Birth</label>
+                <input type="text" name="dob" class="form-control">
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="">About me</label>
+            <textarea name="about" class="form-control"  id="" rows="2"></textarea>
+        </div>
+
+        <h4>Expertise area</h4>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="">Exp. 1</label>
+                <input type="text" name="exp_1" class="form-control" id="form-control">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="">Exp. 2</label>
+                <input type="text" name="exp_2" class="form-control"  id="form-control">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="">Exp. 3</label>
+                <input type="text" name="exp_3" class="form-control"  id="form-control">
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="">Skill</label>
+                <input type="text" placeholder="this would be sepreated by coma"class="form-control"  name="skill">
+
+        </div>
+
+        <div class="form-group">
+          <select name="theme" id="" hidden>
+            <option value="<%=theme %>"><%=theme %></option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>

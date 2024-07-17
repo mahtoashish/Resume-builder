@@ -1,4 +1,5 @@
-<!doctype html>
+const dynamicResume =(options,themeOptions)=>{  //here by using the option we are setting the content dyanmically
+    return `<!doctype html>
 <html lang="en">
 
 <head>
@@ -13,87 +14,62 @@
     <title>Resume Builder</title>
 
     <style>
-        .resume {
+        .resume{
             width: 6.1in;
             height: 7.86in;
         }
 
-        .box {
-            background-color: $ {
-                themeOptions.wholeBodyColor
-            }
-
-            ;
+        .box
+        {
+            background-color: ${themeOptions.wholeBodyColor};
             width: 100%;
             height: 100%;
         }
-
-        .left-side {
-            color: $ {
-                themeOptions.leftTextColor
-            }
-
-            ;
+        .left-side{
+            color: ${themeOptions.leftTextColor};
             width: 33%;
             height: 100%;
-
-            background-color: $ {
-                $ {
-                    themeOptions. leftBackgroundColor
-                }
-
-                ;
-            }
-
-            ;
+            background-color: ${themeOptions.leftBackgroundColor};
         }
-
-        .right-side {
+        .right-side{
             height: 100%;
             width: 65%;
-
-            color: $ {
-                themeOptions.rightTextColor
-            }
-
-            ;
+            color: ${themeOptions.rightTextColor};
 
         }
-
-        .name {
+        .name{
             font-size: 1.2rem;
-
+            
         }
-
-        .profile-image {
+        .profile-image
+        {
             width: 90%;
             margin-left: 5%;
             margin-top: 5%;
 
         }
-
-        .profile-image img {
+        
+        .profile-image img
+        {
             border-radius: 50%;
-
+            
         }
-
-        .heading-text {
+        .heading-text{
             font-size: 0.9rem;
 
         }
-
-        .para .per-info {
+        .para .per-info{
             font-size: 0.7rem !improtant;
         }
 
-        .about .para {
+        .about .para{
             width: 93%;
         }
-
-        .key-skill li {
-            font-size: 0.7rem;
+        .key-skill li{
+            font-size:0.7rem ;
         }
-    </style>
+        
+        </style>
 </head>
 
 <body>
@@ -107,27 +83,24 @@
                     <div class="heading-text text-uppercase">Contact</div>
                     <p class="para mb-1">
                         H.no.12,kalka ji ,NewDelhi <br>
-                        9876543210 <br>
-                        <a href="mailto:abc@gmail.com">abc@gmail.com</a>
+                        ${options.phone} <br>
+                        ${options.email}
                     </p>
                 </div>
                 <div class="expert ml-2 mt-2">
                     <div class="heading-text text-uppercase">Expertise Area </div>
                     <p class="para mb-1">
-                        Web Development <br>
-                        Financiala Analysis <br>
-                        video editing <br>
-                        Photography
+                        ${options.exp_1} <br>
+                        ${options.exp_2} <br>
+                       ${options.exp_3} <br>
+                      
                     </p>
                 </div>
 
                 <div class="skill ml-2 mt-2">
                     <div class="heading-text text-uppercase">Skill </div>
                     <p class="para mb-1">
-                        C <br>
-                        Cpp <br>
-                        video editing <br>
-                        React
+                       ${options.skill} 
                     </p>
                 </div>
 
@@ -144,14 +117,12 @@
             <!-- ***************RIGHT SIDE*************** -->
             <div class="right-side d-inline-block m-0 p-0 align-top">
                 <h2 class="name text-uppercase mt-3 my-2">
-                    Ashish kumar
+                    ${options.name}
                 </h2>
                 <div class="contact ml-3 mt-3">
                     <div class="heading-text text-uppercase">About me</div>
                     <p class="para mb-1">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores amet commodi inventore cum.
-                        Alias cupiditate incidunt, qui obcaecati harum dignissimos, pariatur eum, nobis tempora non vel!
-                        At, vel? Quod magnam eum asperiores nemo blanditiis?
+                       ${options.about} 
                     </p>
                 </div>
 
@@ -162,15 +133,15 @@
 
                             <tr class="border">
                                 <td>Fathers name</td>
-                                <td>Ramesh kumar</td>
+                                <td>${options.f_name}</td>
                             </tr>
                             <tr class="border">
                                 <td>Mother'<small></small> name</td>
-                                <td>Meena devi</td>
+                                <td>${options.m_name}</td>
                             </tr>
                             <tr class="border">
                                 <td>Daet of Birth</td>
-                                <td>12 july 2002</td>
+                                <td>${options.dob}</td>
                             </tr>
                             <tr class="border">
                                 <td>Parmanent addeess</td>
@@ -240,4 +211,7 @@
     -->
 </body>
 
-</html>
+</html>`;
+}
+
+module.exports=dynamicResume;
